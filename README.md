@@ -50,7 +50,7 @@
     if platform.system() == "Windows":
         path = os.path.join('d:\config_report.yaml')
     else:
-        path = os.path.join('/usr/local/aotuConfig/config_report.yaml')
+        path = os.path.join('/usr/local/autoConfig/config_report.yaml')
     f = open(path)
     s = yaml.load(f)
     f.close()
@@ -61,4 +61,5 @@
     python3 manage.py runserver 0.0.0.0:8000
 
     
-    本项目只是一个大概框架和思路。有想法欢迎随时联系笔者！如果有觉得还成的老铁给个小星星～
+    本项目只是一个大概框架和思路。不过报表展示确实酷炫的一B。推荐大家使用echarts,并选用自己习惯的语言库。
+    有想法欢迎随时联系笔者！如果有觉得还成的老铁给个小星星～
