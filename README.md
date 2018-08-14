@@ -1,6 +1,8 @@
 1.python 测试报表平台（Demo） - 抛砖引玉
+
 2.Django + pyecharts + MySql
 
+===============================================
 此项目借鉴了仁兄的布局和思路：https://github.com/testerSunshine/auto_ui
 感谢！多多交流！
 
