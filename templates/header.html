@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://github.com/leefyi">
+                <img src="{% static '/images/logo.png' %}" width="100px">
+            </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav" role="navigation">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'reportDetail' %}">Report</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                {% if user.is_authenticated %}
+                <li>
+                <div class="dropdown" style="margin-top:8px">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown">{{user.username}}<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+
+                    </ul>
+                </div>
+                </li>
+                <li><a href="{% url 'user_logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'user_login' %}">LOGIN</a></li>
+                {% endif%}
+            </ul>
+        </div>
+    </nav>
+<script src="{% static 'js/jquery-3.3.1.js' %}"></script>
+<script src="{% static 'js/bootstrap.js' %}"></script>
+
+</div>

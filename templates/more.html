@@ -1,0 +1,63 @@
+{% extends "base_site.html" %}
+
+{% block title %} 更多图表 {% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link href="/static/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+  <link href="/static/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+  <link href="/static/css/top.css" rel="stylesheet">
+
+{% endblock stylesheets %}
+
+{% block content %}
+<div>
+  <div class="right_col" role="main">
+        {% include "bar.html" %}
+  </div>
+  <div class="right_col">
+      <br>
+      <br>
+      <br>
+  </div>
+  <div class="right_col" role="main">
+        {% include "pie.html" %}
+  </div>
+  <div class="right_col" role="main">
+        {% include "line.html" %}
+  </div>
+  <div class="right_col" role="main">
+        {% include "river.html" %}
+  </div>
+    <a href="#" class="back-to-top">顶部</a>
+</div>
+{% endblock content %}
+{% block javascripts %}
+
+  {{ block.super }}
+  <!-- Datatables -->
+  <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
+  <script>
+      $(document).ready(function(){
+        // 滚动窗口，判断按钮显示或隐藏
+        $(window).scroll(function(){
+            if($(this).scrollTop()>150){
+                $('.back-to-top').fadeIn(100);
+            }else{
+                $('.back-to-top').fadeOut(100);
+            }
+        });
+
+        # JQuery 实现动画滚动
+        $('.back-to-top').click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:0},500);
+
+        });
+
+      });
+  </script>
+{% endblock javascripts %}
